@@ -1,3 +1,3 @@
 # cd-actions
 
-TODO
+Deploy services with helmfile
