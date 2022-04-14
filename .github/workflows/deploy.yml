@@ -24,4 +24,5 @@ jobs:
       - name: Deploy service
         run: |
           set -x
+          export GITHUB_PROJECT_NAME=${{ inputs.project }}
           helmfile -f deploy/helmfile.yaml --log-level info apply --suppress-secrets
