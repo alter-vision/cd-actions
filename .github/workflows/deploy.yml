@@ -24,8 +24,4 @@ jobs:
       - name: Deploy service
         run: |
           set -x
-          helmfile
-          -f deploy/helmfile.yaml
-          --log-level info
-          apply
-          --suppress-secrets
+          helmfile -f deploy/helmfile.yaml --log-level info apply --suppress-secrets
