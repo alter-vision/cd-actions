@@ -25,5 +25,4 @@ jobs:
         run: |
           set -x
           export GITHUB_PROJECT_NAME=${{ inputs.project }}
-          tail -f /dev/null
           helmfile -f deploy/helmfile.yaml --log-level info apply --suppress-secrets
