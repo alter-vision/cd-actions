@@ -21,9 +21,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Prepare environment
+        env:
+          GITHUB_PROJECT_NAME: ${{ inputs.project }}
+          DOCKERHUB_REGISTRY: altervisionhub
+
       - name: Deploy service
         run: |
           set -x
-          export GITHUB_PROJECT_NAME=${{ inputs.project }}
-          export DOCKERHUB_REGISTRY=altervisionhub
+          export PATH=/usr/local/link:$PATH
           helmfile -f deploy/helmfile.yaml --log-level info apply --suppress-secrets
