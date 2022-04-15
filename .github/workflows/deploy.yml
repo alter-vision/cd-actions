@@ -25,6 +25,7 @@ jobs:
         run: |
           set -x
           export GITHUB_PROJECT_NAME=${{ inputs.project }}
+          export PATH=/usr/local/link:$PATH
           env
           ls -la
           helmfile -f deploy/helmfile.yaml --log-level info apply --suppress-secrets
