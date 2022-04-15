@@ -28,9 +28,11 @@ jobs:
 
       - name: Deploy service
         env:
-          GITHUB_PROJECT_NAME: ${{ inputs.project }}
+          PROJECT_NAME: ${{ inputs.project }}
           DOCKERHUB_REGISTRY: altervisionhub
-          GITHUB_REF_NAME: ${{ inputs.refName }}
+          PROJECT_REF_NAME: ${{ inputs.refName }}
+          PUBLIC_IP: 5.128.172.134
+          DOMAIN: alter.vision
         run: |
           set -x
           export PATH=/usr/local/link:$PATH
