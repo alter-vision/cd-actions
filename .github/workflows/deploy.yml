@@ -34,4 +34,5 @@ jobs:
         run: |
           set -x
           export PATH=/usr/local/link:$PATH
+          env
           helmfile -f deploy/helmfile.yaml --log-level info apply --suppress-secrets
