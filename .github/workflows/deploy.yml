@@ -30,5 +30,8 @@ jobs:
           set -x
           export PATH=/usr/local/link:$PATH
           pwd
-          ls
+          ls -la
+          ls -la deploy/
+          helmfile --help
+          ls -la deploy/
           helmfile -f deploy/helmfile.yaml --log-level info apply --suppress-secrets
