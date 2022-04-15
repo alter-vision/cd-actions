@@ -9,8 +9,8 @@ on:
         type: string
 
 jobs:
-  Deploy:
-    name: Deploy
+  Helmfile:
+    name: Helmfile
     runs-on: worklab
     permissions:
       contents: read
