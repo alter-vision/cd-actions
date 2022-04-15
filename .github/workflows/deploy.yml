@@ -22,12 +22,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Prepare environment
+      - name: Deploy service
         env:
           GITHUB_PROJECT_NAME: ${{ inputs.project }}
           DOCKERHUB_REGISTRY: altervisionhub
-
-      - name: Deploy service
         run: |
           set -x
           export PATH=/usr/local/link:$PATH
