@@ -7,6 +7,10 @@ on:
         description: 'Project name'
         required: true
         type: string
+      refName:
+        description: 'Tag/branch name'
+        required: true
+        type: string
 
 jobs:
   Helmfile:
@@ -26,6 +30,7 @@ jobs:
         env:
           GITHUB_PROJECT_NAME: ${{ inputs.project }}
           DOCKERHUB_REGISTRY: altervisionhub
+          GITHUB_REF_NAME: ${{ inputs.refName }}
         run: |
           set -x
           export PATH=/usr/local/link:$PATH
